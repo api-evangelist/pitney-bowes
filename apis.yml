@@ -1,27 +1,38 @@
 aid: pitney-bowes
-name: Pitney Bowes
-description: 'Welcome to the Documentation for the Pitney Bowes Shipping APIs! '
-type: Index
-position: Consumer
-access: 3rd-Party
-image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
-tags:
-  - API
-created: '2025-03-01'
-modified: '2025-03-01'
 url: >-
   https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml
-specificationVersion: '0.19'
 apis:
   - aid: pitney-bowes:pitney-bowes
     name: Pitney Bowes
-    description: 'Welcome to the Documentation for the Pitney Bowes Shipping APIs! '
-    humanURL: ' https://docs.shippingapi.pitneybowes.com/'
     tags:
       - API
+    humanURL: ' https://docs.shippingapi.pitneybowes.com/'
     properties:
-      - type: Documentation
-        url: ' https://docs.shippingapi.pitneybowes.com/'
+      - url: ' https://docs.shippingapi.pitneybowes.com/'
+        type: Documentation
+    description: 'Welcome to the Documentation for the Pitney Bowes Shipping APIs! '
+name: Pitney Bowes
+tags:
+  - Shipping
+  - Mailing
+type: Index
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+access: 3rd-Party
+created: '2025-03-01'
+modified: '2025-03-02'
+position: Consumer
+description: >-
+  Pitney Bowes is a global technology company that specializes in providing
+  innovative shipping and mailing solutions. They offer a range of products and
+  services, including postage meters, shipping software, and mail sorting
+  equipment, to help businesses streamline their shipping and mailing processes.
+  With a focus on efficiency and productivity, Pitney Bowes aims to help
+  companies save time and money on their shipping and mailing operations.
+  Additionally, they provide data management and location intelligence solutions
+  to help businesses better understand and target their customers. Overall,
+  Pitney Bowes is dedicated to helping businesses succeed in the ever-evolving
+  world of commerce.
 maintainers:
   - FN: Kin Lane
     email: info@apievangelist.com
+specificationVersion: '0.19'
