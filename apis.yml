@@ -3,7 +3,7 @@ url: >-
   https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml
 apis:
   - aid: pitney-bowes:pitney-bowes
-    name: Pitney Bowes
+    name: Pitney Bowes APIs
     tags:
       - API
     humanURL: ' https://docs.shippingapi.pitneybowes.com/'
