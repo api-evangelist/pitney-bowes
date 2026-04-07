@@ -5,8 +5,8 @@ apis:
   - aid: pitney-bowes:pitney-bowes
     name: Pitney Bowes APIs
     tags:
-      - Shipping
       - Mailing
+      - Shipping
     humanURL: ' https://docs.shippingapi.pitneybowes.com/'
     properties:
       - url: ' https://docs.shippingapi.pitneybowes.com/'
@@ -19,8 +19,8 @@ apis:
       verification, and automate fulfillment tasks.
 name: Pitney Bowes
 tags:
-  - Shipping
   - Mailing
+  - Shipping
 type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
