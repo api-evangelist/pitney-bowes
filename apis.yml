@@ -7,10 +7,15 @@ apis:
     tags:
       - Mailing
       - Shipping
-    humanURL: ' https://docs.shippingapi.pitneybowes.com/'
+    humanURL: https://docs.shippingapi.pitneybowes.com/
+    baseURL: https://shipping-api.pitneybowes.com
     properties:
-      - url: ' https://docs.shippingapi.pitneybowes.com/'
+      - url: https://docs.shippingapi.pitneybowes.com/
         type: Documentation
+      - url: https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/openapi/pitney-bowes-openapi.yml
+        type: OpenAPI
+      - url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+        type: Authentication
     description: >-
       Pitney Bowes APIs provide a range of tools and resources for businesses to streamline
       their shipping, mailing, and data management processes. These APIs allow companies
@@ -25,7 +30,7 @@ type: Index
 image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
 access: 3rd-Party
 created: '2025-03-01'
-modified: '2025-03-02'
+modified: '2026-04-28'
 position: Consumer
 description: >-
   Pitney Bowes is a global technology company that specializes in providing innovative

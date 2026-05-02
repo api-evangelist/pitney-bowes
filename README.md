@@ -16,15 +16,16 @@ Pitney Bowes is a global technology company that specializes in providing innova
 ## Timestamps
 
 - **Created:** 2025-03-01 
-- **Modified:** 2025-03-02 
+- **Modified:** 2026-04-28 
 
 ## APIs
 
 ### Pitney Bowes APIs
-Pitney Bowes APIs provide a range of tools and resources for businesses to streamline their shipping, mailing, and data management processes. These APIs allow companies to integrate Pitney Bowes services directly into their existing software systems, enabling them to access real-time shipping rates, track shipments, manage address verification, and automate fulfillment tasks. With Pitney Bowes APIs, businesses can enhance their customer experience, improve operational efficiency, and drive growth by leveraging the power of connected technology. Whether it's optimizing postage costs, improving delivery times, or enhancing data quality, Pitney Bowes APIs offer a versatile solution for businesses looking to stay competitive in today's rapidly evolving marketplace.
+Pitney Bowes APIs provide a range of tools and resources for businesses to streamline their shipping, mailing, and data management processes. These APIs allow companies to integrate Pitney Bowes services directly into their existing software systems, enabling them to access real-time shipping rates, track shipments, manage address verification, and automate fulfillment tasks. With Pitney Bowes APIs, businesses can enhance their customer experience, improve operational efficiency, and drive growth by leveraging the power of connected technology.
 
-**Human URL:** [ https://docs.shippingapi.pitneybowes.com/]( https://docs.shippingapi.pitneybowes.com/)
+**Human URL:** [https://docs.shippingapi.pitneybowes.com/](https://docs.shippingapi.pitneybowes.com/)
 
+**Base URL:** https://shipping-api.pitneybowes.com
 
 #### Tags:
 
@@ -32,11 +33,12 @@ Pitney Bowes APIs provide a range of tools and resources for businesses to strea
 
 #### Properties
 
-- [Documentation]( https://docs.shippingapi.pitneybowes.com/)
+- [Documentation](https://docs.shippingapi.pitneybowes.com/)
+- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/openapi/pitney-bowes-openapi.yml)
+- [Authentication](https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html)
 
 ## Maintainers
 
 **FN:** Kin Lane
 
 **Email:** info@apievangelist.com
-
