@@ -1,128 +1,98 @@
 specification: FinOps Framework
 specificationVersion: '1.0'
+schema: https://www.finops.org/framework/
+provider: Pitney Bowes
+providerId: pitney-bowes
+created: '2026-05-04'
+modified: '2026-05-05'
+reconciled: false
+tags:
+  - FinOps
+  - FOCUS
+  - Shipping
+  - Logistics
+  - Mailing
+notes: Pitney Bowes does not publish a self-service price book for its Shipping APIs. Cost is
+  driven by negotiated merchant contracts plus pass-through postage / parcel rates. This artifact
+  models the FinOps shape at the contract / shipment level; per-call API price is not publicly
+  documented.
+description: FOCUS-aligned FinOps placeholder for Pitney Bowes. The cost surface is dominated by
+  pass-through carrier postage and parcel rates plus any negotiated platform fees. APIs are an
+  entitlement of the merchant contract rather than a separately metered SKU.
+sources:
+  - https://www.pitneybowes.com/us/developer.html
+  - https://docs.shippingapi.pitneybowes.com/api
 alignedWith:
   framework: FinOps Foundation Framework
   frameworkUrl: https://www.finops.org/framework/
   dataSpec: FOCUS
   dataSpecVersion: '1.3'
   dataSpecUrl: https://focus.finops.org/focus-specification/v1-3/
-provider: Pitney Bowes
-providerId: pitney-bowes
-publisherName: Pitney Bowes
-serviceCategory: API
-created: '2026-05-04'
-modified: '2026-05-04'
-tags:
-  - Mailing
-  - Shipping
-  - FinOps
-  - Cost Management
-  - FOCUS
-description: FinOps framework definition for the Pitney Bowes API surface. Provides a FOCUS-aligned mapping
-  for cost allocation, usage measurement, and unit-economics reporting across the provider's APIs.
-principles:
-  - name: Visibility
-    description: Make API consumption costs visible to engineering, product, and finance teams in near
-      real-time.
-  - name: Allocation
-    description: Tag every chargeable API call with the consuming team, environment, application, and
-      feature so cost can be allocated.
-  - name: Optimization
-    description: Continuously evaluate request patterns, caching, batching, and tier selection to reduce
-      cost per useful unit of work.
-  - name: Accountability
-    description: Establish budget owners and chargeback or showback flows for each consuming team.
-domains:
-  - name: Understand Usage and Cost
-    capabilities:
-      - Data Ingestion
-      - Allocation
-      - Reporting and Analytics
-      - Anomaly Management
-  - name: Quantify Business Value
-    capabilities:
-      - Planning and Estimating
-      - Forecasting
-      - Budgeting
-      - Benchmarking
-      - Unit Economics
-  - name: Optimize Usage and Cost
-    capabilities:
-      - Architecting for Cloud
-      - Rate Optimization
-      - Workload Optimization
-      - Cloud Sustainability
-      - Licensing and SaaS
-  - name: Manage the FinOps Practice
-    capabilities:
-      - FinOps Practice Operations
-      - FinOps Education and Enablement
-      - Invoicing and Chargeback
-      - Onboarding Workloads
-      - Intersecting Disciplines
+publisherName: Pitney Bowes Inc.
+serviceCategory: Shipping and Mailing
 billingModel:
-  pricingCategory: Usage-Based
-  billingFrequency: Monthly
+  pricingCategory: Pass-Through Postage + Contract
+  billingFrequency: Per-Shipment / Monthly
   billingCurrency: USD
   chargeCategories:
     - Usage
     - Purchase
     - Tax
-    - Credit
     - Adjustment
-  chargeFrequency: Recurring
 focusColumns:
-  ServiceName: Pitney Bowes
-  ServiceCategory: Developer Tools / API
+  ServiceName: Pitney Bowes Shipping API
+  ServiceCategory: Shipping and Mailing
+  ServiceSubcategory: Parcel and Postage
   ProviderName: Pitney Bowes
-  PublisherName: Pitney Bowes
-  InvoiceIssuerName: Pitney Bowes
-  PricingCategory: Usage-Based
-  PricingUnit: request
+  PublisherName: Pitney Bowes Inc.
+  InvoiceIssuerName: Pitney Bowes Inc.
   BillingCurrency: USD
   ChargeCategory: Usage
 meters:
-  - name: api_requests
-    description: Count of billable API requests
-    unit: request
+  - name: shipment
+    description: Each label generated / parcel shipped through the Shipping API. Drives the
+      pass-through carrier postage charge.
+    unit: shipment
+    aggregation: count
+    dimensions:
+      - carrier
+      - service_class
+      - origin
+      - destination
+  - name: postage_amount
+    description: Pass-through postage / parcel cost charged by the carrier (USPS / UPS / FedEx
+      etc.) on each shipment.
+    unit: USD
     aggregation: sum
     dimensions:
-      - api
-      - endpoint
-      - tier
-      - region
-      - consumer
-  - name: data_egress
-    description: Bytes returned over the network in API responses
-    unit: GB
+      - carrier
+      - service_class
+  - name: tracking_event
+    description: Tracking webhook events / poll responses; typically not separately billed.
+    unit: event
+    aggregation: count
+    dimensions:
+      - carrier
+  - name: platform_subscription
+    description: Negotiated monthly platform fee for the Shipping API merchant contract.
+    unit: month
     aggregation: sum
     dimensions:
-      - api
-      - region
-      - consumer
-  - name: compute_seconds
-    description: Server-side compute consumed by the request, where applicable
-    unit: second
-    aggregation: sum
-    dimensions:
-      - api
-      - endpoint
-      - tier
-apis:
-  - name: Pitney Bowes APIs
-    baseURL: https://shipping-api.pitneybowes.com
-    tags:
-      - Mailing
-      - Shipping
-    serviceName: Pitney Bowes APIs
-    serviceCategory: API
-unitEconomics:
-  - name: Cost per 1K Requests
-    metric: billed_cost / (api_requests / 1000)
-    target: TBD
-  - name: Cost per Active Consumer
-    metric: billed_cost / active_consumers
-    target: TBD
+      - merchant
+principles:
+  - name: Visibility
+    description: Track per-shipment cost via the Shipping API response (rate quote) and reconcile
+      monthly against the Pitney Bowes invoice; pass-through postage dominates the line item.
+  - name: Allocation
+    description: Tag shipments with the originating store / fulfillment center / SKU so postage
+      cost rolls up to the correct business unit.
+  - name: Optimization
+    description: Use rate-shopping to pick the cheapest carrier / service class per shipment;
+      consolidate to negotiated zones; use Pitney Bowes presort / cubic discounts where they
+      apply.
+  - name: Accountability
+    description: Logistics / fulfillment team owns shipment cost; finance reviews aggregate
+      postage spend monthly versus volume.
 maintainers:
   - FN: Kin Lane
     email: kin@apievangelist.com
