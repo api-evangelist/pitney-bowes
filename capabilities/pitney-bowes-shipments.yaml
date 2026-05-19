@@ -1,0 +1,155 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Pitney Bowes Shipping API — Shipments
+  description: 'Pitney Bowes Shipping API — Shipments. 3 operations. Lead operation: Create a shipment. Self-contained Naftiko
+    capability covering one Pitney Bowes business surface.'
+  tags:
+  - Pitney Bowes
+  - Shipments
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PITNEY_BOWES_API_KEY: PITNEY_BOWES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pitney-bowes-shipments
+    baseUri: https://shipping-api.pitneybowes.com
+    description: Pitney Bowes Shipping API — Shipments business capability. Self-contained, no shared references.
+    resources:
+    - name: shippingservices-v1-shipments
+      path: /shippingservices/v1/shipments
+      operations:
+      - name: createshipment
+        method: POST
+        description: Create a shipment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    - name: shippingservices-v1-shipments-shipmentId
+      path: /shippingservices/v1/shipments/{shipmentId}
+      operations:
+      - name: reprintshipment
+        method: GET
+        description: Reprint a shipment label
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: shipmentId
+          in: path
+          type: string
+          required: true
+      - name: voidshipment
+        method: DELETE
+        description: Void a shipment
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: shipmentId
+          in: path
+          type: string
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.PITNEY_BOWES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: pitney-bowes-shipments-rest
+    port: 8080
+    description: REST adapter for Pitney Bowes Shipping API — Shipments. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/shippingservices/v1/shipments
+      name: shippingservices-v1-shipments
+      description: REST surface for shippingservices-v1-shipments.
+      operations:
+      - method: POST
+        name: createshipment
+        description: Create a shipment
+        call: pitney-bowes-shipments.createshipment
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+    - path: /v1/shippingservices/v1/shipments/{shipmentid}
+      name: shippingservices-v1-shipments-shipmentid
+      description: REST surface for shippingservices-v1-shipments-shipmentId.
+      operations:
+      - method: GET
+        name: reprintshipment
+        description: Reprint a shipment label
+        call: pitney-bowes-shipments.reprintshipment
+        with:
+          shipmentId: rest.shipmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+      - method: DELETE
+        name: voidshipment
+        description: Void a shipment
+        call: pitney-bowes-shipments.voidshipment
+        with:
+          shipmentId: rest.shipmentId
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pitney-bowes-shipments-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Pitney Bowes Shipping API — Shipments. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: create-shipment
+      description: Create a shipment
+      hints:
+        readOnly: false
+        destructive: false
+        idempotent: false
+      call: pitney-bowes-shipments.createshipment
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: reprint-shipment-label
+      description: Reprint a shipment label
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pitney-bowes-shipments.reprintshipment
+      with:
+        shipmentId: tools.shipmentId
+      outputParameters:
+      - type: object
+        mapping: $.
+    - name: void-shipment
+      description: Void a shipment
+      hints:
+        readOnly: false
+        destructive: true
+        idempotent: true
+      call: pitney-bowes-shipments.voidshipment
+      with:
+        shipmentId: tools.shipmentId
+      outputParameters:
+      - type: object
+        mapping: $.

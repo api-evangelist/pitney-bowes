@@ -1,0 +1,70 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Pitney Bowes Shipping API — Reports
+  description: 'Pitney Bowes Shipping API — Reports. 1 operations. Lead operation: Retrieve transaction report. Self-contained
+    Naftiko capability covering one Pitney Bowes business surface.'
+  tags:
+  - Pitney Bowes
+  - Reports
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PITNEY_BOWES_API_KEY: PITNEY_BOWES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pitney-bowes-reports
+    baseUri: https://shipping-api.pitneybowes.com
+    description: Pitney Bowes Shipping API — Reports business capability. Self-contained, no shared references.
+    resources:
+    - name: shippingservices-v1-ledger-transactions-reports
+      path: /shippingservices/v1/ledger/transactions/reports
+      operations:
+      - name: gettransactionreport
+        method: GET
+        description: Retrieve transaction report
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+    authentication:
+      type: bearer
+      token: '{{env.PITNEY_BOWES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: pitney-bowes-reports-rest
+    port: 8080
+    description: REST adapter for Pitney Bowes Shipping API — Reports. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/shippingservices/v1/ledger/transactions/reports
+      name: shippingservices-v1-ledger-transactions-reports
+      description: REST surface for shippingservices-v1-ledger-transactions-reports.
+      operations:
+      - method: GET
+        name: gettransactionreport
+        description: Retrieve transaction report
+        call: pitney-bowes-reports.gettransactionreport
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pitney-bowes-reports-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Pitney Bowes Shipping API — Reports. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: retrieve-transaction-report
+      description: Retrieve transaction report
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pitney-bowes-reports.gettransactionreport
+      outputParameters:
+      - type: object
+        mapping: $.

@@ -1,0 +1,84 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Pitney Bowes Shipping API — Tracking
+  description: 'Pitney Bowes Shipping API — Tracking. 1 operations. Lead operation: Track a parcel. Self-contained Naftiko
+    capability covering one Pitney Bowes business surface.'
+  tags:
+  - Pitney Bowes
+  - Tracking
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PITNEY_BOWES_API_KEY: PITNEY_BOWES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pitney-bowes-tracking
+    baseUri: https://shipping-api.pitneybowes.com
+    description: Pitney Bowes Shipping API — Tracking business capability. Self-contained, no shared references.
+    resources:
+    - name: shippingservices-v1-tracking-trackingNumber
+      path: /shippingservices/v1/tracking/{trackingNumber}
+      operations:
+      - name: trackparcel
+        method: GET
+        description: Track a parcel
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: trackingNumber
+          in: path
+          type: string
+          required: true
+        - name: carrier
+          in: query
+          type: string
+    authentication:
+      type: bearer
+      token: '{{env.PITNEY_BOWES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: pitney-bowes-tracking-rest
+    port: 8080
+    description: REST adapter for Pitney Bowes Shipping API — Tracking. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/shippingservices/v1/tracking/{trackingnumber}
+      name: shippingservices-v1-tracking-trackingnumber
+      description: REST surface for shippingservices-v1-tracking-trackingNumber.
+      operations:
+      - method: GET
+        name: trackparcel
+        description: Track a parcel
+        call: pitney-bowes-tracking.trackparcel
+        with:
+          trackingNumber: rest.trackingNumber
+          carrier: rest.carrier
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pitney-bowes-tracking-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Pitney Bowes Shipping API — Tracking. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: track-parcel
+      description: Track a parcel
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: true
+      call: pitney-bowes-tracking.trackparcel
+      with:
+        trackingNumber: tools.trackingNumber
+        carrier: tools.carrier
+      outputParameters:
+      - type: object
+        mapping: $.

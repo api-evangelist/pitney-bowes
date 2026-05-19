@@ -1,0 +1,80 @@
+naftiko: 1.0.0-alpha2
+info:
+  label: Pitney Bowes Shipping API — Address
+  description: 'Pitney Bowes Shipping API — Address. 1 operations. Lead operation: Validate and suggest addresses. Self-contained
+    Naftiko capability covering one Pitney Bowes business surface.'
+  tags:
+  - Pitney Bowes
+  - Address
+  created: '2026-05-19'
+  modified: '2026-05-19'
+binds:
+- namespace: env
+  keys:
+    PITNEY_BOWES_API_KEY: PITNEY_BOWES_API_KEY
+capability:
+  consumes:
+  - type: http
+    namespace: pitney-bowes-address
+    baseUri: https://shipping-api.pitneybowes.com
+    description: Pitney Bowes Shipping API — Address business capability. Self-contained, no shared references.
+    resources:
+    - name: shippingservices-v1-addresses-verify
+      path: /shippingservices/v1/addresses/verify
+      operations:
+      - name: verifyaddress
+        method: POST
+        description: Validate and suggest addresses
+        outputRawFormat: json
+        outputParameters:
+        - name: result
+          type: object
+          value: $.
+        inputParameters:
+        - name: body
+          in: body
+          type: object
+          description: Request body (JSON).
+          required: true
+    authentication:
+      type: bearer
+      token: '{{env.PITNEY_BOWES_API_KEY}}'
+  exposes:
+  - type: rest
+    namespace: pitney-bowes-address-rest
+    port: 8080
+    description: REST adapter for Pitney Bowes Shipping API — Address. One Spectral-compliant resource per consumed operation,
+      prefixed with /v1.
+    resources:
+    - path: /v1/shippingservices/v1/addresses/verify
+      name: shippingservices-v1-addresses-verify
+      description: REST surface for shippingservices-v1-addresses-verify.
+      operations:
+      - method: POST
+        name: verifyaddress
+        description: Validate and suggest addresses
+        call: pitney-bowes-address.verifyaddress
+        with:
+          body: rest.body
+        outputParameters:
+        - type: object
+          mapping: $.
+  - type: mcp
+    namespace: pitney-bowes-address-mcp
+    port: 9090
+    transport: http
+    description: MCP adapter for Pitney Bowes Shipping API — Address. One tool per consumed operation, routed inline through
+      this capability's consumes block.
+    tools:
+    - name: validate-and-suggest-addresses
+      description: Validate and suggest addresses
+      hints:
+        readOnly: true
+        destructive: false
+        idempotent: false
+      call: pitney-bowes-address.verifyaddress
+      with:
+        body: tools.body
+      outputParameters:
+      - type: object
+        mapping: $.
