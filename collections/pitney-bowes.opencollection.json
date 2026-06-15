@@ -1,0 +1,273 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Default",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get OAuth access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/oauth/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Generate an OAuth access token using client credentials. Send the Base64-encoded API credentials in the Authorization header using Basic auth and grant_type=client_credentials in the body."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Rating",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Rate a parcel",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/rates",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Returns shipping rates for a parcel based on origin, destination, weight, and service."
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/shipments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a shipment and returns shipping label details."
+        },
+        {
+          "info": {
+            "name": "Reprint a shipment label",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/shipments/:shipmentId",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Reprint a shipment label"
+        },
+        {
+          "info": {
+            "name": "Void a shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/shipments/:shipmentId",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Void a shipment"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Manifests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/manifests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a manifest"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Tracking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Track a parcel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/tracking/:trackingNumber",
+            "params": [
+              {
+                "name": "trackingNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "carrier",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Track a parcel"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Address",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Validate and suggest addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/addresses/verify",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate and suggest addresses"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Pickups",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Schedule a pickup",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/pickups",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Schedule a pickup"
+        },
+        {
+          "info": {
+            "name": "Cancel a pickup",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/pickups/:pickupId",
+            "params": [
+              {
+                "name": "pickupId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Cancel a pickup"
+        }
+      ]
+    },
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve transaction report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/ledger/transactions/reports"
+          },
+          "docs": "Retrieve transaction report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
