@@ -1,10 +1,16 @@
 aid: pitney-bowes
 url: https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml
 common:
+  - type: Authentication
+    url: authentication/pitney-bowes-authentication.yml
+  - type: OAuthScopes
+    url: scopes/pitney-bowes-scopes.yml
   - type: GitHubOrganization
     url: https://github.com/PitneyBowes
   - type: LinkedIn
     url: https://www.linkedin.com/company/pitney-bowes
+  - url: https://www.pitneybowes.com/us/blog.html
+    type: Blog
 apis:
   - aid: pitney-bowes:pitney-bowes
     name: Pitney Bowes APIs

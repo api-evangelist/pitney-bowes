@@ -1,0 +1,14 @@
+generated: '2026-07-11'
+method: derived
+source: openapi/pitney-bowes-openapi.yml
+docs: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+note: Pitney Bowes Shipping APIs use the OAuth client_credentials grant with a Base64-encoded
+  API key and secret, and do not publish user-selectable OAuth scopes; access is tied to
+  the developer account credentials (https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html).
+schemes:
+- name: oauth2
+  source: openapi/pitney-bowes-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+scopes: []
