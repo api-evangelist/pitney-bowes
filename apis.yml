@@ -1,6 +1,8 @@
 aid: pitney-bowes
 url: https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml
 common:
+  - type: DomainSecurity
+    url: security/pitney-bowes-domain-security.yml
   - type: Authentication
     url: authentication/pitney-bowes-authentication.yml
   - type: OAuthScopes
