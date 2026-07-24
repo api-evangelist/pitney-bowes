@@ -1,0 +1,49 @@
+openapi: 3.0.3
+info:
+  title: Pitney Bowes Shipping Address Tracking API
+  description: The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.
+  version: '1.0'
+  contact:
+    name: Pitney Bowes Shipping API
+    url: https://docs.shippingapi.pitneybowes.com/
+servers:
+- url: https://shipping-api.pitneybowes.com
+  description: Production
+- url: https://shipping-api-sandbox.pitneybowes.com
+  description: Sandbox
+security:
+- oauth2: []
+tags:
+- name: Tracking
+paths:
+  /shippingservices/v1/tracking/{trackingNumber}:
+    get:
+      summary: Track a parcel
+      operationId: trackParcel
+      tags:
+      - Tracking
+      parameters:
+      - in: path
+        name: trackingNumber
+        required: true
+        schema:
+          type: string
+      - in: query
+        name: carrier
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Tracking events returned.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Used only on /oauth/token to obtain an access token.
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+          scopes: {}

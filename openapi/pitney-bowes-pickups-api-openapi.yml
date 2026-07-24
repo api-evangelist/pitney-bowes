@@ -1,0 +1,60 @@
+openapi: 3.0.3
+info:
+  title: Pitney Bowes Shipping Address Pickups API
+  description: The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.
+  version: '1.0'
+  contact:
+    name: Pitney Bowes Shipping API
+    url: https://docs.shippingapi.pitneybowes.com/
+servers:
+- url: https://shipping-api.pitneybowes.com
+  description: Production
+- url: https://shipping-api-sandbox.pitneybowes.com
+  description: Sandbox
+security:
+- oauth2: []
+tags:
+- name: Pickups
+paths:
+  /shippingservices/v1/pickups:
+    post:
+      summary: Schedule a pickup
+      operationId: schedulePickup
+      tags:
+      - Pickups
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Pickup scheduled.
+  /shippingservices/v1/pickups/{pickupId}:
+    delete:
+      summary: Cancel a pickup
+      operationId: cancelPickup
+      tags:
+      - Pickups
+      parameters:
+      - in: path
+        name: pickupId
+        required: true
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Pickup cancelled.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Used only on /oauth/token to obtain an access token.
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+          scopes: {}

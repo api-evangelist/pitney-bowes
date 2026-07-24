@@ -1,0 +1,46 @@
+openapi: 3.0.3
+info:
+  title: Pitney Bowes Shipping Address Rating API
+  description: The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.
+  version: '1.0'
+  contact:
+    name: Pitney Bowes Shipping API
+    url: https://docs.shippingapi.pitneybowes.com/
+servers:
+- url: https://shipping-api.pitneybowes.com
+  description: Production
+- url: https://shipping-api-sandbox.pitneybowes.com
+  description: Sandbox
+security:
+- oauth2: []
+tags:
+- name: Rating
+paths:
+  /shippingservices/v1/rates:
+    post:
+      summary: Rate a parcel
+      description: Returns shipping rates for a parcel based on origin, destination, weight, and service.
+      operationId: rateParcel
+      tags:
+      - Rating
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema:
+              type: object
+      responses:
+        '200':
+          description: Rates returned.
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Used only on /oauth/token to obtain an access token.
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+          scopes: {}

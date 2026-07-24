@@ -1,0 +1,66 @@
+openapi: 3.0.3
+info:
+  title: Pitney Bowes Shipping Address Oauth API
+  description: The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.
+  version: '1.0'
+  contact:
+    name: Pitney Bowes Shipping API
+    url: https://docs.shippingapi.pitneybowes.com/
+servers:
+- url: https://shipping-api.pitneybowes.com
+  description: Production
+- url: https://shipping-api-sandbox.pitneybowes.com
+  description: Sandbox
+security:
+- oauth2: []
+tags:
+- name: Oauth
+paths:
+  /oauth/token:
+    post:
+      summary: Get OAuth access token
+      description: Generate an OAuth access token using client credentials. Send the Base64-encoded API credentials in the Authorization header using Basic auth and grant_type=client_credentials in the body.
+      operationId: getOAuthToken
+      security:
+      - basicAuth: []
+      requestBody:
+        required: true
+        content:
+          application/x-www-form-urlencoded:
+            schema:
+              type: object
+              required:
+              - grant_type
+              properties:
+                grant_type:
+                  type: string
+                  enum:
+                  - client_credentials
+      responses:
+        '200':
+          description: Access token returned.
+          content:
+            application/json:
+              schema:
+                type: object
+                properties:
+                  access_token:
+                    type: string
+                  tokenType:
+                    type: string
+                  expiresIn:
+                    type: integer
+      tags:
+      - Oauth
+components:
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+      description: Used only on /oauth/token to obtain an access token.
+    oauth2:
+      type: oauth2
+      flows:
+        clientCredentials:
+          tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+          scopes: {}
