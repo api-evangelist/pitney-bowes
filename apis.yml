@@ -16,32 +16,138 @@ common:
   - url: https://www.pitneybowes.com/us/blog.html
     type: Blog
 apis:
-  - aid: pitney-bowes:pitney-bowes
-    name: Pitney Bowes APIs
-    tags:
-      - Mailing
-      - Shipping
-    humanURL: https://docs.shippingapi.pitneybowes.com/
-    baseURL: https://shipping-api.pitneybowes.com
-    properties:
-      - url: https://docs.shippingapi.pitneybowes.com/
-        type: Documentation
-      - url: https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/openapi/pitney-bowes-openapi.yml
-        type: OpenAPI
-      - url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
-        type: Authentication
-    description: >-
-      Pitney Bowes APIs provide a range of tools and resources for businesses to streamline their shipping, mailing, and
-      data management processes. These APIs allow companies to integrate Pitney Bowes services directly into their
-      existing software systems, enabling them to access real-time shipping rates, track shipments, manage address
-      verification, and automate fulfillment tasks.
+- aid: pitney-bowes:pitney-bowes-address-api
+  name: Pitney Bowes Address API
+  description: The Address API from Pitney Bowes — 1 operation(s) for address.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Address
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-address-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-manifests-api
+  name: Pitney Bowes Manifests API
+  description: The Manifests API from Pitney Bowes — 1 operation(s) for manifests.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Manifests
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-manifests-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-oauth-api
+  name: Pitney Bowes Oauth API
+  description: The Oauth API from Pitney Bowes — 1 operation(s) for oauth.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-oauth-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-pickups-api
+  name: Pitney Bowes Pickups API
+  description: The Pickups API from Pitney Bowes — 2 operation(s) for pickups.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Pickups
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-pickups-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-rating-api
+  name: Pitney Bowes Rating API
+  description: The Rating API from Pitney Bowes — 1 operation(s) for rating.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Rating
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-rating-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-reports-api
+  name: Pitney Bowes Reports API
+  description: The Reports API from Pitney Bowes — 1 operation(s) for reports.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Reports
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-reports-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-shipments-api
+  name: Pitney Bowes Shipments API
+  description: The Shipments API from Pitney Bowes — 2 operation(s) for shipments.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Shipments
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-shipments-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-tracking-api
+  name: Pitney Bowes Tracking API
+  description: The Tracking API from Pitney Bowes — 1 operation(s) for tracking.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Tracking
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
 name: Pitney Bowes
 tags:
   - Mailing
   - Shipping
   - Fortune 1000
 type: Index
-image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/apis-json-logo.jpg
+accessModel:
+  pricing: unknown
+  onboarding: self-serve
+  trial: false
+  try_now: false
+  public: false
+  label: Self-serve signup
+  confidence: high
+  source:
+  - plans
+  - authentication
+  generated: '2026-07-22'
+  method: derived
+image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pitney-bowes.png
 access: 3rd-Party
 created: '2025-03-01'
 modified: '2026-05-19'
