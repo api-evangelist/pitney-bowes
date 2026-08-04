@@ -1,0 +1,28 @@
+{
+  "provider": "pitney-bowes",
+  "sources": [
+    "pitney-bowes-address-api-openapi.yml",
+    "pitney-bowes-manifests-api-openapi.yml",
+    "pitney-bowes-oauth-api-openapi.yml",
+    "pitney-bowes-pickups-api-openapi.yml",
+    "pitney-bowes-rating-api-openapi.yml",
+    "pitney-bowes-reports-api-openapi.yml",
+    "pitney-bowes-shipments-api-openapi.yml",
+    "pitney-bowes-tracking-api-openapi.yml"
+  ],
+  "outputs": [
+    "pitney-bowes-address-api-openapi.yml",
+    "pitney-bowes-manifests-api-openapi.yml",
+    "pitney-bowes-oauth-api-openapi.yml",
+    "pitney-bowes-pickups-api-openapi.yml",
+    "pitney-bowes-rating-api-openapi.yml",
+    "pitney-bowes-reports-api-openapi.yml",
+    "pitney-bowes-shipments-api-openapi.yml",
+    "pitney-bowes-tracking-api-openapi.yml"
+  ],
+  "archived": [],
+  "errors": [],
+  "warnings": [],
+  "notes": [],
+  "skipped": []
+}
