@@ -1,0 +1,40 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping Address Reports API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Reports",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Retrieve transaction report",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/ledger/transactions/reports"
+          },
+          "docs": "Retrieve transaction report"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

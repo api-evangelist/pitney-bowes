@@ -1,0 +1,137 @@
+{
+  "item": [
+    {
+      "id": "82999f86-d658-40c2-a195-fb6e829c7863",
+      "name": "Manifests",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "3b301329-9a09-4445-9688-7aec9b8f869b",
+          "name": "Create a manifest",
+          "request": {
+            "name": "Create a manifest",
+            "description": {},
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "manifests"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "7ab35ddb-9d94-4bce-adb2-ef621566010f",
+              "name": "Manifest created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "manifests"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://shipping-api.pitneybowes.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://shipping-api.pitneybowes.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "c54c20ab-a14b-4486-913c-0aa6cff687b5",
+    "name": "Pitney Bowes Shipping Address Manifests API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.\n\nContact Support:\n Name: Pitney Bowes Shipping API",
+      "type": "text/plain"
+    }
+  }
+}

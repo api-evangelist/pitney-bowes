@@ -1,0 +1,143 @@
+{
+  "item": [
+    {
+      "id": "47becf76-b951-4ec7-ab66-aca5e10ca6ac",
+      "name": "Tracking",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "9f3eb6fb-14e9-4275-b3bf-288cc721888d",
+          "name": "Track a parcel",
+          "request": {
+            "name": "Track a parcel",
+            "description": {},
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "tracking",
+                ":trackingNumber"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [
+                {
+                  "disabled": false,
+                  "key": "carrier",
+                  "value": "<string>"
+                }
+              ],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "trackingNumber",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "513daf03-5284-43aa-92d1-17554b4d0a55",
+              "name": "Tracking events returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "tracking",
+                    ":trackingNumber"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [
+                    {
+                      "key": "carrier",
+                      "value": "<string>"
+                    }
+                  ],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "trackingNumber",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://shipping-api.pitneybowes.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://shipping-api.pitneybowes.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "388edbec-9aeb-472f-a278-a8303208a4e8",
+    "name": "Pitney Bowes Shipping Address Tracking API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.\n\nContact Support:\n Name: Pitney Bowes Shipping API",
+      "type": "text/plain"
+    }
+  }
+}

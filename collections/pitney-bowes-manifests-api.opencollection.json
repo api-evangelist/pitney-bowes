@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping Address Manifests API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Manifests",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a manifest",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/manifests",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Create a manifest"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

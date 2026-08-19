@@ -1,0 +1,314 @@
+{
+  "item": [
+    {
+      "id": "81e1c62a-a776-46e2-bdc3-cdbc5a38f590",
+      "name": "Shipments",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "de9fdeab-9f2f-47f9-b7f2-e894c0f8be08",
+          "name": "Create a shipment",
+          "request": {
+            "name": "Create a shipment",
+            "description": {
+              "content": "Creates a shipment and returns shipping label details.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "shipments"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "2da64cab-1e78-4966-a84f-cd9b68b55f27",
+              "name": "Shipment created.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "shipments"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "3ca4ed02-4f8b-4747-aa2b-bddc7af3bb7c",
+          "name": "Reprint a shipment label",
+          "request": {
+            "name": "Reprint a shipment label",
+            "description": {},
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "shipments",
+                ":shipmentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shipmentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "a20ab2c6-19c9-4a16-8027-d07dcf31271f",
+              "name": "Shipment label returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "shipments",
+                    ":shipmentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shipmentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        },
+        {
+          "id": "07805bb3-c52a-4455-9721-a17e20e8d423",
+          "name": "Void a shipment",
+          "request": {
+            "name": "Void a shipment",
+            "description": {},
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "shipments",
+                ":shipmentId"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": [
+                {
+                  "disabled": false,
+                  "type": "any",
+                  "value": "<string>",
+                  "key": "shipmentId",
+                  "description": "(Required) "
+                }
+              ]
+            },
+            "method": "DELETE",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "40e299e2-160e-42db-8b1a-925e86be1b21",
+              "name": "Shipment voided.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "shipments",
+                    ":shipmentId"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": [
+                    {
+                      "disabled": false,
+                      "type": "any",
+                      "value": "<string>",
+                      "key": "shipmentId",
+                      "description": "(Required) "
+                    }
+                  ]
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "DELETE",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://shipping-api.pitneybowes.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://shipping-api.pitneybowes.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "d341bd0d-8188-4af6-bc05-58056af83920",
+    "name": "Pitney Bowes Shipping Address Shipments API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.\n\nContact Support:\n Name: Pitney Bowes Shipping API",
+      "type": "text/plain"
+    }
+  }
+}

@@ -1,0 +1,52 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping Address Tracking API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Tracking",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Track a parcel",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/tracking/:trackingNumber",
+            "params": [
+              {
+                "name": "trackingNumber",
+                "value": "",
+                "type": "path"
+              },
+              {
+                "name": "carrier",
+                "value": "",
+                "type": "query"
+              }
+            ]
+          },
+          "docs": "Track a parcel"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

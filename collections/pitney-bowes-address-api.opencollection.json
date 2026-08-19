@@ -1,0 +1,44 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping Address API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Address",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Validate and suggest addresses",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/addresses/verify",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Validate and suggest addresses"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

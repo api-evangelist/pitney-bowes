@@ -1,0 +1,118 @@
+{
+  "item": [
+    {
+      "id": "260a30d8-5115-4d43-adfe-e2b47991e2ef",
+      "name": "Reports",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "ebdab0ff-21e2-4e91-b6d7-6f6b99e8dce5",
+          "name": "Retrieve transaction report",
+          "request": {
+            "name": "Retrieve transaction report",
+            "description": {},
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "ledger",
+                "transactions",
+                "reports"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "method": "GET",
+            "auth": null
+          },
+          "response": [
+            {
+              "id": "3f6a5827-1d03-408e-961e-b4b84bd9e2e8",
+              "name": "Transaction report returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "ledger",
+                    "transactions",
+                    "reports"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "GET",
+                "body": {}
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://shipping-api.pitneybowes.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://shipping-api.pitneybowes.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "8d995971-5ae1-42c7-acab-f3f55092e5b7",
+    "name": "Pitney Bowes Shipping Address Reports API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.\n\nContact Support:\n Name: Pitney Bowes Shipping API",
+      "type": "text/plain"
+    }
+  }
+}

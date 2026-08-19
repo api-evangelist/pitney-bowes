@@ -1,0 +1,140 @@
+{
+  "item": [
+    {
+      "id": "02899d17-f5fd-4144-ae6c-3aa388392353",
+      "name": "Rating",
+      "description": {
+        "content": "",
+        "type": "text/plain"
+      },
+      "item": [
+        {
+          "id": "7756e384-cb19-4bab-a4c7-bf88f674456b",
+          "name": "Rate a parcel",
+          "request": {
+            "name": "Rate a parcel",
+            "description": {
+              "content": "Returns shipping rates for a parcel based on origin, destination, weight, and service.",
+              "type": "text/plain"
+            },
+            "url": {
+              "path": [
+                "shippingservices",
+                "v1",
+                "rates"
+              ],
+              "host": [
+                "{{baseUrl}}"
+              ],
+              "query": [],
+              "variable": []
+            },
+            "header": [
+              {
+                "key": "Content-Type",
+                "value": "application/json"
+              }
+            ],
+            "method": "POST",
+            "auth": null,
+            "body": {
+              "mode": "raw",
+              "raw": "<object>",
+              "options": {
+                "raw": {
+                  "language": "json"
+                }
+              }
+            }
+          },
+          "response": [
+            {
+              "id": "4ff7eda1-5877-4707-92ee-d58f19483fb4",
+              "name": "Rates returned.",
+              "originalRequest": {
+                "url": {
+                  "path": [
+                    "shippingservices",
+                    "v1",
+                    "rates"
+                  ],
+                  "host": [
+                    "{{baseUrl}}"
+                  ],
+                  "query": [],
+                  "variable": []
+                },
+                "header": [
+                  {
+                    "description": {
+                      "content": "Added as a part of security scheme: oauth2",
+                      "type": "text/plain"
+                    },
+                    "key": "Authorization",
+                    "value": "<token>"
+                  }
+                ],
+                "method": "POST",
+                "body": {
+                  "mode": "raw",
+                  "raw": "<object>",
+                  "options": {
+                    "raw": {
+                      "language": "json"
+                    }
+                  }
+                }
+              },
+              "status": "OK",
+              "code": 200,
+              "header": [
+                {
+                  "key": "Content-Type",
+                  "value": "text/plain"
+                }
+              ],
+              "body": "",
+              "cookie": [],
+              "_postman_previewlanguage": "text"
+            }
+          ],
+          "event": [],
+          "protocolProfileBehavior": {
+            "disableBodyPruning": true
+          }
+        }
+      ],
+      "event": []
+    }
+  ],
+  "event": [],
+  "variable": [
+    {
+      "type": "string",
+      "value": "https://shipping-api.pitneybowes.com",
+      "key": "baseUrl"
+    }
+  ],
+  "auth": {
+    "type": "oauth2",
+    "oauth2": [
+      {
+        "key": "accessTokenUrl",
+        "value": "https://shipping-api.pitneybowes.com/oauth/token"
+      },
+      {
+        "key": "grant_type",
+        "value": "client_credentials"
+      }
+    ]
+  },
+  "info": {
+    "_postman_id": "29b3cdd1-cc9f-4938-b1a0-8704444fc1da",
+    "name": "Pitney Bowes Shipping Address Rating API",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": {
+      "content": "The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.\n\nContact Support:\n Name: Pitney Bowes Shipping API",
+      "type": "text/plain"
+    }
+  }
+}

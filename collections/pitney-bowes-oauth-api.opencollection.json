@@ -1,0 +1,54 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping Address Oauth API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Oauth",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Get OAuth access token",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/oauth/token",
+            "body": {
+              "type": "form-urlencoded",
+              "data": [
+                {
+                  "name": "grant_type",
+                  "value": ""
+                }
+              ]
+            },
+            "auth": {
+              "type": "basic",
+              "username": "{{username}}",
+              "password": "{{password}}"
+            }
+          },
+          "docs": "Generate an OAuth access token using client credentials. Send the Base64-encoded API credentials in the Authorization header using Basic auth and grant_type=client_credentials in the body."
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}

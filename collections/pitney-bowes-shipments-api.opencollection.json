@@ -1,0 +1,80 @@
+{
+  "opencollection": "1.0.0",
+  "info": {
+    "name": "Pitney Bowes Shipping Address Shipments API",
+    "version": "1.0"
+  },
+  "request": {
+    "auth": {
+      "type": "oauth2",
+      "flow": "client_credentials",
+      "accessTokenUrl": "https://shipping-api.pitneybowes.com/oauth/token",
+      "credentials": {
+        "clientId": "{{clientId}}",
+        "clientSecret": "{{clientSecret}}"
+      }
+    }
+  },
+  "items": [
+    {
+      "info": {
+        "name": "Shipments",
+        "type": "folder"
+      },
+      "items": [
+        {
+          "info": {
+            "name": "Create a shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "POST",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/shipments",
+            "body": {
+              "type": "json",
+              "data": "{}"
+            }
+          },
+          "docs": "Creates a shipment and returns shipping label details."
+        },
+        {
+          "info": {
+            "name": "Reprint a shipment label",
+            "type": "http"
+          },
+          "http": {
+            "method": "GET",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/shipments/:shipmentId",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Reprint a shipment label"
+        },
+        {
+          "info": {
+            "name": "Void a shipment",
+            "type": "http"
+          },
+          "http": {
+            "method": "DELETE",
+            "url": "https://shipping-api.pitneybowes.com/shippingservices/v1/shipments/:shipmentId",
+            "params": [
+              {
+                "name": "shipmentId",
+                "value": "",
+                "type": "path"
+              }
+            ]
+          },
+          "docs": "Void a shipment"
+        }
+      ]
+    }
+  ],
+  "bundled": true
+}
