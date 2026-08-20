@@ -50,6 +50,8 @@ apis:
   humanURL: https://docs.shippingapi.pitneybowes.com/
   baseURL: https://shipping-api.pitneybowes.com
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
