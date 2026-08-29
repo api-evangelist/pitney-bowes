@@ -1,0 +1,51 @@
+slug: pitney-bowes
+provider: Pitney Bowes
+generated_by: planning/capability-mapping/scripts/classify_capabilities.py
+model: claude-opus-5
+frame:
+- Transportation & Logistics
+min_confidence: 0.7
+capability_model:
+  source: https://github.com/vincentmakes/turbo-ea-capabilities
+  license: CC-BY-4.0
+  attribution: Turbo EA Capabilities by Vincent Verdet — Turbo EA, https://github.com/vincentmakes/turbo-ea-capabilities,
+    CC BY 4.0
+  notice: NOTICE
+edge_count: 4
+edges:
+- tag: Tracking
+  spec_file: pitney-bowes-tracking-api-openapi.yml
+  capability_id: BC-2510.20
+  capability_id_l1: BC-2510
+  capability_name: Shipment Tracking Management
+  confidence: 0.9
+  evidence: GET /shippingservices/v1/tracking/{trackingNumber} trackParcel 'Track a parcel'
+  reason: Single operation resolves parcel status by tracking number, which is shipment tracking/visibility.
+- tag: Rating
+  spec_file: pitney-bowes-rating-api-openapi.yml
+  capability_id: BC-2520.50
+  capability_id_l1: BC-2520
+  capability_name: Rating Engine Operations Management
+  confidence: 0.8
+  evidence: POST /shippingservices/v1/rates — "Rate a parcel"
+  reason: Computes shipping charges for a parcel against carrier tariffs — operation of a freight rating
+    engine. 'Rating' here is price calculation, not credit or review ratings.
+- tag: Pickups
+  spec_file: pitney-bowes-pickups-api-openapi.yml
+  capability_id: BC-2420.30
+  capability_id_l1: BC-2420
+  capability_name: Pickup and Drayage Operations Management
+  confidence: 0.78
+  evidence: POST /shippingservices/v1/pickups — "Schedule a pickup"; DELETE /shippingservices/v1/pickups/{pickupId}
+    — "Cancel a pickup"
+  reason: Scheduling and cancelling carrier pickups from the shipper is first-mile pickup operations.
+- tag: Manifests
+  spec_file: pitney-bowes-manifests-api-openapi.yml
+  capability_id: BC-2500.40
+  capability_id_l1: BC-2500
+  capability_name: Manifest and Cargo Declaration Management
+  confidence: 0.75
+  evidence: POST /shippingservices/v1/manifests — "Create a manifest"; vendor API supports "shipping,
+    rating, tracking, address validation, manifesting, and pickup operations"
+  reason: Creates shipping manifests handed to the carrier, which is manifest/cargo declaration documentation.
+    Single operation limits certainty of the exact sub-capability.

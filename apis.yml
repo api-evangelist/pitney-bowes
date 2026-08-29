@@ -1,6 +1,9 @@
 aid: pitney-bowes
 url: https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml
 common:
+  - type: CapabilityMap
+    url: capabilities/pitney-bowes-capability-edges.yml
+    name: Pitney Bowes Business Capability Map
   - type: AgenticAccess
     url: agentic-access/pitney-bowes-agentic-access.yml
   - type: DomainSecurity
