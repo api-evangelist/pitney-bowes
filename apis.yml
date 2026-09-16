@@ -1,23 +1,25 @@
 aid: pitney-bowes
 url: https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml
 common:
-  - type: CapabilityMap
-    url: capabilities/pitney-bowes-capability-edges.yml
-    name: Pitney Bowes Business Capability Map
-  - type: AgenticAccess
-    url: agentic-access/pitney-bowes-agentic-access.yml
-  - type: DomainSecurity
-    url: security/pitney-bowes-domain-security.yml
-  - type: Authentication
-    url: authentication/pitney-bowes-authentication.yml
-  - type: OAuthScopes
-    url: scopes/pitney-bowes-scopes.yml
-  - type: GitHubOrganization
-    url: https://github.com/PitneyBowes
-  - type: LinkedIn
-    url: https://www.linkedin.com/company/pitney-bowes
-  - url: https://www.pitneybowes.com/us/blog.html
-    type: Blog
+- type: Website
+  url: https://pitneybowes.com
+- type: CapabilityMap
+  url: capabilities/pitney-bowes-capability-edges.yml
+  name: Pitney Bowes Business Capability Map
+- type: AgenticAccess
+  url: agentic-access/pitney-bowes-agentic-access.yml
+- type: DomainSecurity
+  url: security/pitney-bowes-domain-security.yml
+- type: Authentication
+  url: authentication/pitney-bowes-authentication.yml
+- type: OAuthScopes
+  url: scopes/pitney-bowes-scopes.yml
+- type: GitHubOrganization
+  url: https://github.com/PitneyBowes
+- type: LinkedIn
+  url: https://www.linkedin.com/company/pitney-bowes
+- url: https://www.pitneybowes.com/us/blog.html
+  type: Blog
 apis:
 - aid: pitney-bowes:pitney-bowes-address-api
   name: Pitney Bowes Address API
@@ -135,9 +137,9 @@ apis:
     url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
 name: Pitney Bowes
 tags:
-  - Mailing
-  - Shipping
-  - Fortune 1000
+- Mailing
+- Shipping
+- Fortune 1000
 type: Index
 deliveryModel:
   model: unknown
@@ -166,14 +168,14 @@ accessModel:
 image: https://kinlane-images.s3.amazonaws.com/shared/apis-json/icons/pitney-bowes.png
 access: 3rd-Party
 created: '2025-03-01'
-modified: '2026-05-19'
+modified: '2026-09-16'
 position: Consuming
-description: >-
-  Pitney Bowes is a global technology company that specializes in providing innovative shipping and mailing solutions.
-  They offer a range of products and services, including postage meters, shipping software, and mail sorting equipment,
-  to help businesses streamline their shipping and mailing processes. With a focus on efficiency and productivity,
-  Pitney Bowes aims to help companies save time and money on their shipping and mailing operations.
+description: Pitney Bowes is a global technology company that specializes in providing innovative shipping
+  and mailing solutions. They offer a range of products and services, including postage meters, shipping
+  software, and mail sorting equipment, to help businesses streamline their shipping and mailing processes.
+  With a focus on efficiency and productivity, Pitney Bowes aims to help companies save time and money
+  on their shipping and mailing operations.
 maintainers:
-  - FN: Kin Lane
-    email: kin@apievangelist.com
+- FN: Kin Lane
+  email: kin@apievangelist.com
 specificationVersion: '0.23'
