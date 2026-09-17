@@ -49,22 +49,6 @@ apis:
     url: https://docs.shippingapi.pitneybowes.com/
   - type: Authentication
     url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
-- aid: pitney-bowes:pitney-bowes-oauth-api
-  name: Pitney Bowes Oauth API
-  description: The Oauth API from Pitney Bowes — 1 operation(s) for oauth.
-  humanURL: https://docs.shippingapi.pitneybowes.com/
-  baseURL: https://shipping-api.pitneybowes.com
-  tags:
-  - Authentication
-  tags_raw:
-  - Oauth
-  properties:
-  - type: OpenAPI
-    url: openapi/pitney-bowes-oauth-api-openapi.yml
-  - type: Documentation
-    url: https://docs.shippingapi.pitneybowes.com/
-  - type: Authentication
-    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
 - aid: pitney-bowes:pitney-bowes-pickups-api
   name: Pitney Bowes Pickups API
   description: The Pickups API from Pitney Bowes — 2 operation(s) for pickups.
@@ -131,6 +115,20 @@ apis:
   properties:
   - type: OpenAPI
     url: openapi/pitney-bowes-tracking-api-openapi.yml
+  - type: Documentation
+    url: https://docs.shippingapi.pitneybowes.com/
+  - type: Authentication
+    url: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
+- aid: pitney-bowes:pitney-bowes-oauth-api
+  name: Pitney Bowes OAUTH API
+  description: The Oauth API from Pitney Bowes — 1 operation(s) for oauth.
+  humanURL: https://docs.shippingapi.pitneybowes.com/
+  baseURL: https://shipping-api.pitneybowes.com
+  tags:
+  - Oauth
+  properties:
+  - type: OpenAPI
+    url: openapi/pitney-bowes-oauth-api-openapi.yml
   - type: Documentation
     url: https://docs.shippingapi.pitneybowes.com/
   - type: Authentication
