@@ -69,6 +69,8 @@ apis:
   humanURL: https://docs.shippingapi.pitneybowes.com/
   baseURL: https://shipping-api.pitneybowes.com
   tags:
+  - Ratings
+  tags_raw:
   - Rating
   properties:
   - type: OpenAPI
@@ -125,6 +127,8 @@ apis:
   humanURL: https://docs.shippingapi.pitneybowes.com/
   baseURL: https://shipping-api.pitneybowes.com
   tags:
+  - Authentication
+  tags_raw:
   - Oauth
   properties:
   - type: OpenAPI
