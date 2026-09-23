@@ -1,7 +1,9 @@
 ---
 title: Pitney Bowes Delivering New Value through Partnership ...
 url: https://www.investorrelations.pitneybowes.com/news-releases/news-release-details/pitney-bowes-delivering-new-value-through-partnership-ecosystem
-date: '2026-05-25'
+published: ''
+date_basis: harvested
+harvested: '2026-05-25'
 query: '"Pitney Bowes" press release artificial intelligence'
 position: 3
 source: serpapi-google

@@ -1,14 +1,7 @@
 {
   "provider": "pitney-bowes",
   "sources": [
-    "pitney-bowes-address-api-openapi.yml",
-    "pitney-bowes-manifests-api-openapi.yml",
-    "pitney-bowes-oauth-api-openapi.yml",
-    "pitney-bowes-pickups-api-openapi.yml",
-    "pitney-bowes-rating-api-openapi.yml",
-    "pitney-bowes-reports-api-openapi.yml",
-    "pitney-bowes-shipments-api-openapi.yml",
-    "pitney-bowes-tracking-api-openapi.yml"
+    "_original/pitney-bowes-openapi.yml"
   ],
   "outputs": [
     "pitney-bowes-address-api-openapi.yml",
@@ -20,9 +13,34 @@
     "pitney-bowes-shipments-api-openapi.yml",
     "pitney-bowes-tracking-api-openapi.yml"
   ],
-  "archived": [],
+  "archived": [
+    "deleted 1 superseded output(s) from the previous generation"
+  ],
   "errors": [],
   "warnings": [],
-  "notes": [],
-  "skipped": []
+  "notes": [
+    "sourced from openapi/_original/ (1 archived document(s)); previously refined output at the top level was skipped rather than re-split",
+    "pitney-bowes-openapi.yml: upgraded openapi 3.0.3 -> OpenAPI 3.2.0",
+    "pitney-bowes-openapi.yml: tagged paths POST /oauth/token -> Oauth",
+    "pitney-bowes-openapi.yml: declared missing tag: Address",
+    "pitney-bowes-openapi.yml: declared missing tag: Manifests",
+    "pitney-bowes-openapi.yml: declared missing tag: Oauth",
+    "pitney-bowes-openapi.yml: declared missing tag: Pickups",
+    "pitney-bowes-openapi.yml: declared missing tag: Rating",
+    "pitney-bowes-openapi.yml: declared missing tag: Reports",
+    "pitney-bowes-openapi.yml: declared missing tag: Shipments",
+    "pitney-bowes-openapi.yml: declared missing tag: Tracking",
+    "superseded outputs removed: pitney-bowes-o-auth-api-openapi.yml",
+    "apis.yml register: written (+1 apis, 8 total)"
+  ],
+  "skipped": [
+    "pitney-bowes-address-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-manifests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-pickups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-rating-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-shipments-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-tracking-api-openapi.yml: previously refined output, superseded by openapi/_original/"
+  ]
 }
