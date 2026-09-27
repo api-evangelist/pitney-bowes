@@ -13,9 +13,7 @@
     "pitney-bowes-shipments-api-openapi.yml",
     "pitney-bowes-tracking-api-openapi.yml"
   ],
-  "archived": [
-    "deleted 1 superseded output(s) from the previous generation"
-  ],
+  "archived": [],
   "errors": [],
   "warnings": [],
   "notes": [
@@ -30,13 +28,12 @@
     "pitney-bowes-openapi.yml: declared missing tag: Reports",
     "pitney-bowes-openapi.yml: declared missing tag: Shipments",
     "pitney-bowes-openapi.yml: declared missing tag: Tracking",
-    "superseded outputs removed: pitney-bowes-o-auth-api-openapi.yml",
-    "apis.yml register: written (+1 apis, 8 total)"
+    "apis.yml register: already-registered"
   ],
   "skipped": [
     "pitney-bowes-address-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "pitney-bowes-manifests-api-openapi.yml: previously refined output, superseded by openapi/_original/",
-    "pitney-bowes-o-auth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
+    "pitney-bowes-oauth-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "pitney-bowes-pickups-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "pitney-bowes-rating-api-openapi.yml: previously refined output, superseded by openapi/_original/",
     "pitney-bowes-reports-api-openapi.yml: previously refined output, superseded by openapi/_original/",

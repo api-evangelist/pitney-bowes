@@ -1,6 +1,6 @@
 openapi: 3.2.0
 info:
-  title: Pitney Bowes Shipping OAUTH API
+  title: Pitney Bowes Shipping OAuth API
   description: The Pitney Bowes Shipping API enables businesses to integrate shipping, rating, tracking, address validation, manifesting, and pickup operations directly into their applications. Authentication uses OAuth 2.0 client credentials.
   version: '1.0'
   contact:
