@@ -1,14 +1,50 @@
-generated: '2026-07-11'
-method: derived
-source: openapi/pitney-bowes-openapi.yml
-docs: https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html
-note: Pitney Bowes Shipping APIs use the OAuth client_credentials grant with a Base64-encoded
-  API key and secret, and do not publish user-selectable OAuth scopes; access is tied to
-  the developer account credentials (https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html).
+generated: '2026-10-14'
+method: none
+source: openapi/pitney-bowes-address-api-openapi.yml, openapi/pitney-bowes-manifests-api-openapi.yml,
+  openapi/pitney-bowes-oauth-api-openapi.yml, openapi/pitney-bowes-pickups-api-openapi.yml,
+  openapi/pitney-bowes-rating-api-openapi.yml, openapi/pitney-bowes-reports-api-openapi.yml,
+  openapi/pitney-bowes-shipments-api-openapi.yml, openapi/pitney-bowes-tracking-api-openapi.yml
 schemes:
 - name: oauth2
-  source: openapi/pitney-bowes-openapi.yml
+  source: openapi/pitney-bowes-address-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-manifests-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-oauth-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-pickups-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-rating-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-reports-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-shipments-api-openapi.yml
+  flows:
+  - flow: clientCredentials
+    tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
+- name: oauth2
+  source: openapi/pitney-bowes-tracking-api-openapi.yml
   flows:
   - flow: clientCredentials
     tokenUrl: https://shipping-api.pitneybowes.com/oauth/token
 scopes: []
+note: The OAuth2 security scheme(s) in the OpenAPI declare no scopes, and no security requirement
+  references one.
