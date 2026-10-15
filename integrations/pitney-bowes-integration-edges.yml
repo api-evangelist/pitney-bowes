@@ -28,9 +28,40 @@ edges:
   detected_by: mirror-platform-listings.py
   publisher_verified:
   - Built for Shopify
+- partner_name: DGFiP plateformes agreees (France e-invoicing reform)
+  partner: null
+  partner_match: register
+  type: register
+  direction: partner-built
+  evidence: https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees
+  category: French e-invoicing platform
+  channel: standard-directory
+  relationship: standard-participant
+  contract_reference:
+    register: DGFiP liste des plateformes agreees (impots.gouv.fr)
+    spec_file: null
+    standard: France e-invoicing (plateforme agreee)
+    role: plateforme-agreee
+    registered_name: PITNEY BOWES
+    website: https://www.pitneybowes.com/fr
+    matched_domain: pitneybowes.com
+    matched_by: domain
+    certified_products:
+    - product: plateforme agreee (PA)
+      lapsed: false
+      registered: '2026-01-13'
+    signal_note: certified_products = the immatriculation (one per operator); an operator awaiting the interop tests
+      is participation only
+    detected_by: sweep-einvoicing-tax.py
+    detected: '2026-10-15'
+  detected_by: sweep-einvoicing-tax.py
+  first_seen: '2026-10-15'
 generated: '2026-10-12'
 method: searched
 checked:
+- https://peppol.org/members/peppol-certified-service-providers/
+- https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees
+- https://www.streamlinedsalestax.org/certified-service-providers/certified-service-providers-list
 - shopify/integrations/shopify-integration-edges.yml
 source:
 - shopify/integrations/shopify-integration-edges.yml
