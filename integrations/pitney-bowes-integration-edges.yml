@@ -1,3 +1,22 @@
+generated: '2026-10-20'
+method: searched
+source:
+- shopify/integrations/shopify-integration-edges.yml
+- https://zapier.com/apps/pitney-bowes/integrations
+- https://n8n.io/integrations/pitney-bowes/
+- https://composio.dev/toolkits/pitney-bowes
+- https://monid.ai/tools/pitney-bowes
+checked:
+- https://peppol.org/members/peppol-certified-service-providers/
+- https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees
+- https://www.streamlinedsalestax.org/certified-service-providers/certified-service-providers-list
+- shopify/integrations/shopify-integration-edges.yml
+- https://composio.dev/toolkits/pitney-bowes
+- https://monid.ai/tools/pitney-bowes
+- https://n8n.io/integrations/pitney-bowes/
+- https://zapier.com/apps/pitney-bowes/integrations
+summary: null
+marketplace_apps: []
 edges:
 - partner_name: 17track
   partner: 17track
@@ -56,12 +75,4 @@ edges:
     detected: '2026-10-15'
   detected_by: sweep-einvoicing-tax.py
   first_seen: '2026-10-15'
-generated: '2026-10-12'
-method: searched
-checked:
-- https://peppol.org/members/peppol-certified-service-providers/
-- https://www.impots.gouv.fr/je-consulte-la-liste-des-plateformes-agreees
-- https://www.streamlinedsalestax.org/certified-service-providers/certified-service-providers-list
-- shopify/integrations/shopify-integration-edges.yml
-source:
-- shopify/integrations/shopify-integration-edges.yml
+templates: []
