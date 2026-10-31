@@ -1,4 +1,4 @@
-# Pitney Bowes (pitney-bowes)
+# Pitney Bowes
 
 <!-- API-EVANGELIST-PROVENANCE:BEGIN -->
 > ### About this repository
@@ -66,52 +66,135 @@
 
 Pitney Bowes is a global technology company that specializes in providing innovative shipping and mailing solutions. They offer a range of products and services, including postage meters, shipping software, and mail sorting equipment, to help businesses streamline their shipping and mailing processes. With a focus on efficiency and productivity, Pitney Bowes aims to help companies save time and money on their shipping and mailing operations.
 
-**APIs.json:** [https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml](https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/apis.yml)
+**Areas:** Mailing · Shipping · Fortune 1000
 
-## Scope
+## Pitney Bowes on APIs.io
 
-- **Type:** Index
-- **Position:** Consumer
-- **Access:** 3rd-Party
+Everything profiled for Pitney Bowes is published on APIs.io rather than in this repository. Start at the provider page — **[apis.io/providers/pitney-bowes/](https://apis.io/providers/pitney-bowes/)** — or go straight to one of the APIs or properties below.
 
-## Tags
+### APIs (8)
 
-- Mailing
-- Shipping
+- [Pitney Bowes Address API](https://apis.io/apis/pitney-bowes/pitney-bowes-address-api/) — The Address API from Pitney Bowes — 1 operation(s) for address.
+- [Pitney Bowes Manifests API](https://apis.io/apis/pitney-bowes/pitney-bowes-manifests-api/) — The Manifests API from Pitney Bowes — 1 operation(s) for manifests.
+- [Pitney Bowes Pickups API](https://apis.io/apis/pitney-bowes/pitney-bowes-pickups-api/) — The Pickups API from Pitney Bowes — 2 operation(s) for pickups.
+- [Pitney Bowes Rating API](https://apis.io/apis/pitney-bowes/pitney-bowes-rating-api/) — The Rating API from Pitney Bowes — 1 operation(s) for rating.
+- [Pitney Bowes Reports API](https://apis.io/apis/pitney-bowes/pitney-bowes-reports-api/) — The Reports API from Pitney Bowes — 1 operation(s) for reports.
+- [Pitney Bowes Shipments API](https://apis.io/apis/pitney-bowes/pitney-bowes-shipments-api/) — The Shipments API from Pitney Bowes — 2 operation(s) for shipments.
+- [Pitney Bowes Tracking API](https://apis.io/apis/pitney-bowes/pitney-bowes-tracking-api/) — The Tracking API from Pitney Bowes — 1 operation(s) for tracking.
+- [Pitney Bowes OAUTH API](https://apis.io/apis/pitney-bowes/pitney-bowes-oauth-api/) — The Oauth API from Pitney Bowes — 1 operation(s) for oauth.
 
-## Timestamps
+### Published properties
 
-- **Created:** 2025-03-01
-- **Modified:** 2026-05-19
+Each property below is a page on APIs.io carrying the machine-readable artifact and what it says.
 
-## APIs
+#### Agentic access (1)
 
-### Pitney Bowes APIs
+Which operations an agent can call, which act, and which need a human in the loop.
 
-Pitney Bowes APIs provide a range of tools and resources for businesses to streamline their shipping, mailing, and data management processes. These APIs allow companies to integrate Pitney Bowes services directly into their existing software systems, enabling them to access real-time shipping rates, track shipments, manage address verification, and automate fulfillment tasks.
+- [Pitney Bowes Agentic Access](https://apis.io/agentic-access/pitney-bowes/pitney-bowes-agentic-access/)
 
-- **Human URL:** [https://docs.shippingapi.pitneybowes.com/](https://docs.shippingapi.pitneybowes.com/)
-- **Base URL:** `https://shipping-api.pitneybowes.com`
+#### Collections (9)
 
-#### Tags
+Postman and Open Collection request collections.
 
-- Mailing
-- Shipping
+- [Pitney Bowes Shipping API](https://apis.io/collections/pitney-bowes/open-pitney-bowes/)
+- [Pitney Bowes Shipping Address API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-address-api/)
+- [Pitney Bowes Shipping Address Manifests API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-manifests-api/)
+- [Pitney Bowes Shipping Address Oauth API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-oauth-api/)
+- [Pitney Bowes Shipping Address Pickups API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-pickups-api/)
+- [Pitney Bowes Shipping Address Rating API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-rating-api/)
+- [Pitney Bowes Shipping Address Reports API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-reports-api/)
+- [Pitney Bowes Shipping Address Shipments API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-shipments-api/)
+- [Pitney Bowes Shipping Address Tracking API](https://apis.io/collections/pitney-bowes/open-pitney-bowes-tracking-api/)
 
-#### Properties
+#### Security (2)
 
-- [Documentation](https://docs.shippingapi.pitneybowes.com/)
-- [OpenAPI](https://raw.githubusercontent.com/api-evangelist/pitney-bowes/refs/heads/main/openapi/pitney-bowes-openapi.yml) — [OpenAPI Specification](https://spec.openapis.org/oas/latest.html)
-- [Authentication](https://docs.shippingapi.pitneybowes.com/api/post-oauth-token.html)
-- [Postman Collection](collections/pitney-bowes.postman_collection.json) — [Postman Collection 2.1](https://schema.getpostman.com/json/collection/v2.1.0/collection.json)
-- [Open Collection](collections/pitney-bowes.opencollection.json) — [Open Collection 1.0](https://schema.opencollection.com/opencollection/v1.0.0.json)
+Authentication, trust centre, and vulnerability disclosure.
 
-## Common Properties
+- [Pitney Bowes Authentication](https://apis.io/security/pitney-bowes/pitney-bowes-authentication/)
+- [Pitney Bowes Domain Security](https://apis.io/security/pitney-bowes/pitney-bowes-domain-security/)
 
-- [GitHub Organization](https://github.com/PitneyBowes)
-- [LinkedIn](https://www.linkedin.com/company/pitney-bowes)
+#### OAuth scopes (1)
 
-## Maintainers
+The permissions the API asks for.
 
-**FN:** Kin Lane
-**Email:** kin@apievangelist.com
+- [Pitney Bowes Scopes](https://apis.io/scopes/pitney-bowes/pitney-bowes-scopes/)
+
+#### Plans and pricing (1)
+
+Published plans, tiers and prices.
+
+- [Pitney Bowes Plans Pricing](https://apis.io/plans/pitney-bowes/pitney-bowes-plans-pricing/)
+
+#### Rate limits (1)
+
+Published request limits.
+
+- [Pitney Bowes Rate Limits](https://apis.io/rate-limits/pitney-bowes/pitney-bowes-rate-limits/)
+
+#### FinOps (1)
+
+What the API costs to run, by operation.
+
+- [Pitney Bowes Finops](https://apis.io/finops/pitney-bowes/pitney-bowes-finops/)
+
+## Where to find this API
+
+Links to the company's own pages. This repository publishes no copy of their specifications — the canonical document is theirs and lives at the URLs below.
+
+- [Website](https://pitneybowes.com)
+- [Blog](https://www.pitneybowes.com/us/blog.html)
+- [GitHub](https://github.com/PitneyBowes)
+
+## API Evangelist rating
+
+**Kin Score 23.5** — emerging · rubric 0.24.0 · scored 2026-10-17
+
+| Facet | Score |
+|---|---|
+| Discoverability | 57.1 |
+| Contract quality | 42.6 |
+| Contract governance | 0.0 |
+| Operational transparency | 7.9 |
+| Developer ergonomics | 23.8 |
+| Access clarity | 5.3 |
+
+**Agent readiness 22.5** — agent-aware
+
+| Agent-readiness dimension | Result |
+|---|---|
+| Spec Presence | yes |
+| Agentic Access | derived (partial credit) |
+| Reversibility Documented | documented (partial credit) |
+| MCP Server | — |
+| Auth Clarity | negotiable (partial credit) |
+| Idempotency | — |
+| Error Semantics | — |
+| OpenAPI Examples | — |
+| Rate Limit Signal | derived (partial credit) |
+| Event Surface Described | — |
+| Agent Skills | — |
+| Well Known Catalog | — |
+| Consent Identity | — |
+| Agent Card | — |
+| Dry Run Mode | — |
+| Delegated Identity | — |
+| Protected Resource Metadata | — |
+| Dynamic Client Registration | — |
+| Agentic Commerce | — |
+
+**Regulatory alignment 21.6** — Horizontal (data, software, accessibility, platform)
+
+The rubric is published at [github.com/api-evangelist/kin-score](https://github.com/api-evangelist/kin-score). The per-check breakdown behind these numbers — which checks were earned, partial or missed — along with score history and how this provider compares to its peers, is available at [apis.io/providers/pitney-bowes/](https://apis.io/providers/pitney-bowes/).
+
+## How this profile is made
+
+API Evangelist profiles a company's public API surface the way a developer would find it: the website, developer portal and documentation, the specifications it publishes, its public repositories, and its pricing, status and changelog pages. From that it derives the properties above — contracts split per API, workflows, schemas, collections, governance rules, plans and rate limits — and scores them against the published [Kin Score rubric](https://github.com/api-evangelist/kin-score).
+
+The artifacts are published on [APIs.io](https://apis.io), not in this repository. This repository is the public record for Pitney Bowes: the place to say something is wrong, missing or out of date, and to ask for a re-score or a removal.
+
+## Open an issue
+
+- **Something about this listing** — a wrong description, a missing API, a stale artifact or a question about the rating: [open an issue on this repository](https://github.com/api-evangelist/pitney-bowes/issues/new).
+- **A new API, or one that is not in the catalog yet** — [submit it on APIs.io](https://apis.io/add/).
+- **Anything else** — [the APIs.io inbox](https://github.com/api-search/inbox/issues/new) or [info@apievangelist.com](mailto:info@apievangelist.com).
